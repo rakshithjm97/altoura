@@ -1,0 +1,13 @@
+,Customer Name,Product Name,Review Text,Sentiment
+0,John Doe,AwesomeWidget,John Doe bought AwesomeWidget. This widget is absolutely amazing! It has made,positive
+1,Jane Smith,the MediocreWidget,"Jane Smith got the MediocreWidget. It's okay, but not as great as I",positive
+2,Bob Johnson,the TerribleWidget,This is the worst widget I've ever used. It broke after just one week. Very,negative
+3,Alice Brown,the SuperWidget and said it is fantastic,Alice Brown used the SuperWidget and said it is fantastic. It exceeded all,positive
+4,Charlie Davis,the BasicWidget,Charlie Davis tested the BasicWidget. He found it decent but lacking some features,negative
+5,Evans,NULL,She was impressed with its performance and reliability. The traffic was terrible,positive
+6,Frank Green,the SimpleWidget and found it to be very user-friendly and efficient,The new software update has,neutral
+7,Grace Harris,the PremiumWidget,She mentioned it was worth every penny. We are planning a team outing next,positive
+8,Henry White,out the AdvancedWidget and had a mixed experience,It was good but had some issues. The,positive
+9,NULL,the EconomyWidget and thought it was below average in terms of quality,The quarterly financial report,neutral
+10,NULL,NULL,The new marketing campaign has been very successful. We have seen a significant,positive
+11,sapien varius,NULL,"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",neutral
