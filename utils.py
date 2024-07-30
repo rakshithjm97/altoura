@@ -38,6 +38,7 @@ def extract_text_from_pdf(file_path):
         return text
     except FileNotFoundError:
         return ""
+
 def preprocess_text(text, lang='en'):
     """
     Preprocess text by tokenizing, lowercasing, removing stopwords, stemming, and lemmatizing.
@@ -50,7 +51,6 @@ def preprocess_text(text, lang='en'):
     - preprocessed_text: Preprocessed text.
     """
     tokens = word_tokenize(text)
-
     tokens = [word.lower() for word in tokens]
     stop_words = set(stopwords.words('english')) if lang == 'en' else set()
     tokens = [word for word in tokens if word not in stop_words]
@@ -135,5 +135,4 @@ def detect_language(text):
     Returns:
     - lang: Detected language code.
     """
-   
     return 'en'  # Assuming 'en' for now
