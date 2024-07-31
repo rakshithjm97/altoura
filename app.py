@@ -3,7 +3,12 @@ import tempfile
 from utils import extract_text_from_pdf, extract_data_with_gpt, create_dataframe, preprocess_text, detect_language
 from sentiment_analysis import determine_sentiment_textblob, determine_sentiment_spacy, determine_sentiment_vader, determine_sentiment_transformers
 import nltk
+import spacy
+from spacy.cli import download
 
+# Download and install spaCy model
+download('en_core_web_sm')
+nlp = spacy.load('en_core_web_sm')
 # Ensure NLTK resources are downloaded
 nltk.download('punkt')
 nltk.download('stopwords')
