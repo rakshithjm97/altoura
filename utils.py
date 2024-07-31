@@ -8,12 +8,20 @@ from nltk import WordNetLemmatizer
 import nltk
 import pandas as pd
 
+# Initialize spaCy model
+def load_spacy_model():
+    try:
+        nlp = spacy.load('en_core_web_sm')
+    except OSError:
+        spacy.cli.download('en_core_web_sm')
+        nlp = spacy.load('en_core_web_sm')
+    return nlp
+
+nlp = load_spacy_model()
+
 # Ensure NLTK resources are downloaded
 nltk.download('punkt')
 nltk.download('stopwords')
-
-# Initialize spaCy model
-nlp = spacy.load('en_core_web_sm')
 
 # Initialize NLTK components
 lemmatizer = WordNetLemmatizer()
@@ -52,16 +60,14 @@ def preprocess_text(text, lang='en'):
     """
     tokens = word_tokenize(text)
     tokens = [word.lower() for word in tokens]
+    
     stop_words = set(stopwords.words('english')) if lang == 'en' else set()
     tokens = [word for word in tokens if word not in stop_words]
-
-    stemmed_tokens = [stemmer.stem(word) for word in tokens]
 
     doc = nlp(" ".join(tokens))
     lemmatized_tokens = [token.lemma_ for token in doc]
 
-    combined_tokens = set(stemmed_tokens + lemmatized_tokens)
-    preprocessed_text = " ".join(combined_tokens)
+    preprocessed_text = " ".join(lemmatized_tokens)
     return preprocessed_text
 
 def extract_data_with_gpt(input_text):
@@ -86,12 +92,8 @@ def extract_data_with_gpt(input_text):
         entries = re.split(r'Entry\s+\d+:', input_text)
 
         for entry in entries[1:]:
-            customer_name = None
-            for name in names:
-                if name in entry:
-                    customer_name = name
-                    break
-            customer_names.append(customer_name if customer_name else 'NULL')
+            customer_name = next((name for name in names if name in entry), 'NULL')
+            customer_names.append(customer_name)
             
             match_product = action_product_pattern.search(entry)
             product_name = match_product.group(2).strip() if match_product else 'NULL'
@@ -108,12 +110,9 @@ def extract_data_with_gpt(input_text):
         
         return customer_names, product_names, review_texts
     
-    except AttributeError as ae:
-        print(f"AttributeError in extract_data_with_gpt: {ae}")
-        return None
     except Exception as e:
         print(f"Error in extract_data_with_gpt: {e}")
-        return None
+        return ['NULL'], ['NULL'], ['NULL']
 
 def create_dataframe(customer_names, product_names, review_texts, best_sentiments):
     data = {
