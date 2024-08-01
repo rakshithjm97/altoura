@@ -54,7 +54,7 @@ pip==24.0
 preshed==3.0.9
 protobuf==4.25.4
 pyarrow==17.0.0
-pydantic==1.10.2
+pydantic==1.9.2  # Updated version to resolve conflict
 pydeck==0.9.1
 Pygments==2.18.0
 PyPDF2==3.0.1
