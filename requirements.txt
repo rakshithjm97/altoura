@@ -92,8 +92,8 @@ watchdog==4.0.1
 weasel==0.4.1
 wheel==0.43.0
 wrapt==1.16.0
-en-core-web-sm==3.7.0
-import subprocess
+
+
 
 
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.0/en_core_web_sm-3.7.0-py3-none-any.whl
