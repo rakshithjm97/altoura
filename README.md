@@ -1,4 +1,4 @@
-Sentiment Analysis App
+#3Sentiment Analysis App
 Welcome to the Sentiment Analysis App, a comprehensive application built with Streamlit and various powerful NLP libraries. This project aims to provide an interactive and intuitive interface for analyzing the sentiment of text data using state-of-the-art models and techniques.
 
 Table of Contents
