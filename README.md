@@ -25,9 +25,14 @@ To get started with the Sentiment Analysis App, follow these steps:
 Clone the Repository:
 
 bash
-Copy code
-git clone https://github.com/yourusername/sentiment-analysis-app.git
-cd sentiment-analysis-app
+### Clone the Repository
+
+To get started with the Sentiment Analysis App, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/rakshithjm97/altoura.git
+cd altoura
+p
 Install Dependencies:
 Ensure you have Python installed, then run:
 
