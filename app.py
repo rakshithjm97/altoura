@@ -14,7 +14,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 
 def main():
-    st.title("Sachin")
+    st.title("Sentiment analysis")
     uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
     if uploaded_file is not None:
